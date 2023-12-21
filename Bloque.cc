@@ -14,13 +14,11 @@ Bloque::Bloque(float xPos, float yPos, std::string texturePath) {
 
     // Creating the sprite
 
-    sprite.setTexture(texture);
     sprite.setTextureRect(sf::IntRect(xPos, yPos, BLOCK_WIDTH, BLOCK_HEIGHT));
+    sprite.setTexture(texture);
 
     sprite.setPosition(sf::Vector2f(xPos, yPos));
   }
 }
 
 Bloque::~Bloque() {}
-
-bool check_collision(Pelota pelota) {}

@@ -2,19 +2,17 @@
 #define PELOTA_HH
 
 #include <SFML/Graphics.hpp>
-#include <SFML/System/Vector2.hpp>
 
 class Pelota {
 public:
-  sf::Sprite sprite;
+  sf::Vector2f velocidad;
+  sf::CircleShape sprite;
   sf::Texture texture;
 
-  sf::Vector2f velocity;
+  Pelota(float xPos, float yPos, std::string texturePath);
+  ~Pelota();
 
   void move();
-
-  Pelota();
-  ~Pelota();
 
 private:
 };

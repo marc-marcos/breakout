@@ -48,9 +48,15 @@ int main() {
     for (int j = 0; j < 3; ++j) {
       int randomTexture = std::rand() % 6;
       cb.lista_b.push_back(
-          Bloque(i * 70, j * BLOCK_HEIGHT, texturas[std::rand() % 6]));
+          Bloque(i * 70, j * BLOCK_HEIGHT, texturas[randomTexture]));
     }
   }
+
+  cb.lista_b.push_back(Bloque(3 * 70, 6 * BLOCK_HEIGHT, "texture/purple.png"));
+
+  // Crear la Pelota
+
+  Pelota ball = Pelota(100.0f, 100.0f, "texture/red.png");
 
   // run the program as long as the window is open
   while (window.isOpen()) {
@@ -69,6 +75,8 @@ int main() {
     // draw everything here...
     // window.draw(...);
     window.draw(paleta.sprite);
+
+    window.draw(ball.sprite);
 
     for (Bloque b : cb.lista_b) {
       window.draw(b.sprite);
